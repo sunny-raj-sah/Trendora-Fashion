@@ -9,7 +9,7 @@
 
   .filter-sticky-toggle {
     position: fixed;
-    top: 119px;
+    top: 106px;
     left: 16px;
     z-index: 1050;
   }
