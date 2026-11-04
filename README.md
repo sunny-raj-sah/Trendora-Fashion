@@ -1,4 +1,4 @@
-# Trendora — Full Stack E-Commerce Platform
+# Trendora Fashion
 
 Trendora is a full-stack e-commerce web application built with the **MERN stack**. It provides user authentication, product discovery, category/search filtering, wishlist management, shopping cart functionality, address management, and checkout/order-related backend APIs.
 
@@ -8,10 +8,7 @@ The project is structured as a separate React frontend and Node.js/Express backe
 
 [Trendora Live Demo](https://mern-shopping-site-43xo.vercel.app/)
 
-## Repository
-
-[GitHub Repository](https://github.com/sunny-raj-sah/MERN-Shopping-Site.git)
-
+ 
 ---
 
 ## Features

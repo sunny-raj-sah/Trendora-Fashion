@@ -1,0 +1,242 @@
+/* =========================
+   HOME PAGE
+========================= */
+
+.home-page {
+  min-height: 70vh;
+}
+
+.home-search-section {
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+.home-status {
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* =========================
+   CATEGORY CARDS
+========================= */
+
+.home-category-card {
+  border-radius: 10px;
+  overflow: hidden;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.home-category-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0.5rem 1.2rem rgba(0, 0, 0, 0.12) !important;
+}
+
+.home-category-image {
+  width: 100%;
+  height: 145px;
+  object-fit: cover;
+}
+
+/* =========================
+   HERO BANNER
+========================= */
+
+.home-hero {
+  min-height: 430px;
+  height: 500px;
+  background-color: #f1f1f1;
+}
+
+.home-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.home-hero-content {
+  width: min(48%, 540px);
+  padding-left: clamp(24px, 5vw, 64px);
+  padding-right: 16px;
+}
+
+.home-hero-badge {
+  font-size: 0.85rem;
+  padding: 8px 12px;
+}
+
+.home-hero-title {
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  line-height: 1.12;
+  margin-bottom: 18px;
+}
+
+.home-hero-description {
+  max-width: 440px;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* =========================
+   PROMOTIONAL CARDS
+========================= */
+
+.home-promo-card {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.home-promo-image {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.home-promo-title {
+  font-size: clamp(1.25rem, 2vw, 1.7rem);
+  line-height: 1.2;
+}
+
+.home-promo-description {
+  line-height: 1.6;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 991.98px) {
+  .home-hero {
+    height: 420px;
+    min-height: 380px;
+  }
+
+  .home-hero-content {
+    width: 55%;
+  }
+
+  .home-category-image {
+    height: 135px;
+  }
+
+  .home-promo-image {
+    height: 180px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 767.98px) {
+  .home-page {
+    padding-top: 24px !important;
+    padding-bottom: 32px !important;
+  }
+
+  .home-search-section {
+    padding-top: 28px;
+    padding-bottom: 40px;
+  }
+
+  .home-category-image {
+    height: 125px;
+  }
+
+  .home-hero {
+    height: 390px;
+    min-height: 350px;
+  }
+
+  .home-hero-image {
+    object-position: 60% center;
+  }
+
+  .home-hero-content {
+    width: 75%;
+    padding-left: 22px;
+    padding-right: 12px;
+  }
+
+  .home-hero-title {
+    font-size: clamp(2rem, 7vw, 2.7rem);
+  }
+
+  .home-hero-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .home-hero-content .btn {
+    font-size: 0.95rem;
+  }
+
+  .home-promo-image {
+    height: 160px;
+  }
+
+  .home-promo-title {
+    font-size: 1.25rem;
+  }
+
+  .home-promo-description {
+    font-size: 0.8rem !important;
+    line-height: 1.45;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 420px) {
+  .home-category-image {
+    height: 110px;
+  }
+
+  .home-hero {
+    height: 350px;
+    min-height: 320px;
+  }
+
+  .home-hero-content {
+    width: 85%;
+    padding-left: 18px;
+  }
+
+  .home-hero-title {
+    font-size: 2rem;
+  }
+
+  .home-hero-description {
+    font-size: 0.82rem;
+  }
+
+  .home-hero-badge {
+    font-size: 0.72rem;
+  }
+
+  .home-promo-image {
+    height: 135px;
+  }
+
+  .home-promo-card .card-body {
+    padding: 12px !important;
+  }
+
+  .home-promo-title {
+    font-size: 1.05rem;
+  }
+
+  .home-promo-description {
+    margin-bottom: 10px;
+  }
+
+  .home-promo-card .btn {
+    font-size: 0.75rem;
+  }
+}

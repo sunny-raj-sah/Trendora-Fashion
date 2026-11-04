@@ -1,0 +1,287 @@
+/* ==============================
+   Trendora Navbar
+================================ */
+
+.trendora-navbar {
+  width: 100%;
+  padding: 14px 0;
+  position: relative;
+  z-index: 1000;
+}
+
+.trendora-navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+}
+
+/* Logo */
+
+.trendora-brand {
+  flex-shrink: 0;
+  font-size: 1.8rem;
+  white-space: nowrap;
+}
+
+.trendora-logo {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/* Search */
+
+.trendora-search {
+  flex: 1;
+  max-width: 550px;
+  min-width: 0;
+}
+
+.trendora-search .input-group-text {
+  border-right: 0;
+}
+
+.trendora-search .form-control {
+  border-left: 0;
+  min-width: 0;
+  box-shadow: none;
+}
+
+.trendora-search .form-control:focus {
+  border-color: #dee2e6;
+}
+
+.trendora-search-mobile {
+  display: none;
+}
+
+/* Right Actions */
+
+.trendora-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.trendora-profile-btn {
+  white-space: nowrap;
+}
+
+.trendora-login-btn {
+  white-space: nowrap;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.trendora-icon-btn {
+  width: 44px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  flex-shrink: 0;
+}
+
+.trendora-icon-btn i {
+  font-size: 1.4rem;
+}
+
+.trendora-icon-btn .badge {
+  font-size: 0.65rem;
+  min-width: 18px;
+}
+ /* ==============================
+   Tablet and Mobile
+================================ */
+
+@media (max-width: 991.98px) {
+  .trendora-navbar .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .trendora-navbar-content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .trendora-search-desktop {
+    display: none !important;
+  }
+
+  .trendora-navbar .trendora-search-mobile {
+    display: block !important;
+    width: 100%;
+    max-width: 100%;
+    flex: 0 0 100%;
+    margin-top: 14px;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .trendora-search-mobile .input-group {
+    display: flex;
+    width: 100%;
+  }
+
+  .trendora-search-mobile .form-control {
+    display: block;
+    width: 1%;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+}
+ /* ==============================
+   Small Screen Navbar Fix
+================================ */
+
+@media (max-width: 575.98px) {
+  .trendora-navbar .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .trendora-navbar-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    min-width: 0;
+  }
+
+  /* Logo */
+  .trendora-brand {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    flex-shrink: 1;
+    min-width: 0;
+  }
+
+  .trendora-logo {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+  }
+
+  /* Right side actions */
+  .trendora-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2px;
+    flex-shrink: 0;
+  }
+
+  /* Profile */
+  .trendora-profile-btn {
+    padding: 5px 7px;
+    font-size: 0.75rem;
+  }
+
+  .trendora-profile-btn i {
+    margin-right: 3px !important;
+  }
+
+  .trendora-profile-name {
+    display: none;
+  }
+
+  /* Login */
+  .trendora-login-btn {
+    padding: 5px 8px;
+    font-size: 0.75rem;
+  }
+
+  /* Wishlist and Cart */
+  .trendora-icon-btn {
+    width: 32px;
+    height: 36px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .trendora-icon-btn i {
+    font-size: 1.15rem;
+  }
+
+  .trendora-icon-btn .badge {
+    font-size: 0.58rem;
+    min-width: 15px;
+    padding: 3px 4px;
+  }
+
+  /* Search */
+  .trendora-search-mobile {
+    width: 100%;
+    flex: 0 0 100%;
+    margin-top: 12px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+  .trendora-brand {
+    font-size: 1.05rem;
+  }
+
+  .trendora-logo {
+    width: 27px;
+    height: 27px;
+  }
+
+  .trendora-actions {
+    gap: 1px;
+  }
+
+  .trendora-icon-btn {
+    width: 29px;
+  }
+
+  .trendora-login-btn,
+  .trendora-profile-btn {
+    padding: 4px 6px;
+    font-size: 0.7rem;
+  }
+}
+/* Fix spacing between navbar action icons */
+
+@media (max-width: 575.98px) {
+  .trendora-actions {
+    display: flex !important;
+    align-items: center;
+    gap: 10px !important;
+    flex-shrink: 0;
+  }
+
+  .trendora-icon-btn {
+    position: relative;
+    width: 36px;
+    height: 38px;
+    padding: 0 !important;
+    margin: 0 !important;
+    flex: 0 0 36px;
+  }
+
+  .trendora-icon-btn i {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .trendora-actions {
+    gap: 7px !important;
+  }
+}

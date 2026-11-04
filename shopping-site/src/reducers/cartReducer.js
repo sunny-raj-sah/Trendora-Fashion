@@ -7,9 +7,7 @@ export const cartReducer = (state, action) => {
     switch (action.type) {
 
         case "ADD_TO_CART":
-
             return {
-
                 ...state,
 
                 cart: [...state.cart, { ...action.payload, quantity: 1 }],
@@ -42,11 +40,11 @@ export const cartReducer = (state, action) => {
 
                         ? {
 
-                              ...item,
+                            ...item,
 
-                              quantity: item.quantity + 1,
+                            quantity: item.quantity + 1,
 
-                          }
+                        }
 
                         : item
 
@@ -66,26 +64,31 @@ export const cartReducer = (state, action) => {
 
                         ? {
 
-                              ...item,
+                            ...item,
 
-                              quantity: item.quantity - 1,
+                            quantity: item.quantity - 1,
 
-                          }
+                        }
 
                         : item
 
                 ),
 
             };
-            case "CLEAR_CART":
+            case "SET_CART":
+    return {
+        ...state,
+        cart: action.payload,
+    };
+        case "CLEAR_CART":
 
-return{
+            return {
 
-    ...state,
+                ...state,
 
-    cart:[]
+                cart: []
 
-}
+            }
 
         default:
 

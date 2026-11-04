@@ -105,7 +105,7 @@ export const AuthProvider = ({ children }) => {
       loadProfile();
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [state.token,state.user]);
+  }, [state.token]);
 
   return (
     <AuthContext.Provider
