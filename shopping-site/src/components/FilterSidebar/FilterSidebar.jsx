@@ -1,7 +1,8 @@
  
 import { useState ,useEffect } from "react";
 import { useProducts } from "../../context/ProductContext";
- 
+import "./FilterSidebar.css"
+
 const FilterSidebar = () => {
   const { state, dispatch } = useProducts();
 

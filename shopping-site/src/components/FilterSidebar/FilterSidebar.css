@@ -1,7 +1,7 @@
 @media (max-width: 767.98px) {
   .filter-sticky-toggle {
     position: fixed;
-    top: 105px;
+    top: 115px;
     left: 16px;
     z-index: 1050;
   }
