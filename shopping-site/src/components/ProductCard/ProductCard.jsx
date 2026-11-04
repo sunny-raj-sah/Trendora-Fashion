@@ -299,6 +299,12 @@ const ProductCard = ({ product }) => {
 
   // Add product using backend Cart API
   const handleAddToCart = async () => {
+
+     if (!isLoggedIn) {
+    toast.info("Please login to add products to your cart.");
+    return;
+  }
+  
     if (cartLoading) return;
 
     setCartLoading(true);
