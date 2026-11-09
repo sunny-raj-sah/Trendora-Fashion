@@ -21,6 +21,19 @@ const Checkout = () => {
     dispatch: cartDispatch,
   } = useCart();
 
+  // Normalize API cart response
+const normalizedCart = cartState.cart.map((item) => {
+  const product = item.product || item;
+
+  return {
+    id: product._id || product.id,
+    title: product.title,
+    price: Number(product.price),
+    image: product.image,
+    quantity: Number(item.quantity),
+  };
+});
+
   const {
     state: addressState,
   } = useAddress();
@@ -54,13 +67,13 @@ const Checkout = () => {
   }
 
   // Total Items
-  const totalItems = cartState.cart.reduce(
+  const totalItems = normalizedCart.reduce(
     (total, item) => total + item.quantity,
     0
   );
 
   // Total Price
-  const totalPrice = cartState.cart.reduce(
+  const totalPrice = normalizedCart.reduce(
     (total, item) => total + item.price * item.quantity,
     0
   );
@@ -71,11 +84,12 @@ const Checkout = () => {
       alert("Please select a delivery address.");
       return;
     }
+      const orderId = crypto.randomUUID();
 
     const order = {
-      orderId: Date.now(),
+       orderId,
 
-      items: cartState.cart.map((item) => ({
+      items:  normalizedCart.map((item) => ({
         ...item,
       })),
 
@@ -186,7 +200,7 @@ const Checkout = () => {
 
                 <hr />
 
-                {cartState.cart.map((item) => (
+                { normalizedCart.map((item) => (
 
                   <div
                     key={item.id}

@@ -81,33 +81,27 @@ if (state.error) {
 
                         <FilterSidebar />
 
-                    </div>
+                    </div> 
+<div className="col-lg-9 bg-light py-3 py-md-4 px-2 px-sm-3 px-lg-5 product-listing-section">
 
-                    <div className="col-lg-9 bg-light py-4 px-5">
+  {/* PRODUCT LISTING HEADER */}
+ 
+  <div className="product-listing-header mb-4 d-flex flex-column flex-lg-row align-items-center justify-content-between text-center">
 
-                        <div className="d-flex align-items-center mb-4">
+  <h2 className="fw-bold mb-0">
+    Showing All Products
+  </h2>
 
-                            <h2 className="fw-bold mb-0">
+  <span className="text-secondary product-count">
+    Showing {filteredProducts.length} products
+  </span>
 
-                                Showing All Products
+</div>
 
-                            </h2>
+  <ProductGrid products={filteredProducts} />
 
-                            <span className="ms-3 fs-5 text-secondary">
+</div>
 
-                                (
-                                Showing {filteredProducts.length} products
-                                )
-
-                            </span>
-
-                        </div>
-
-                        <ProductGrid
-                            products={filteredProducts}
-                        />
-
-                    </div>
 
                 </div>
 
@@ -122,3 +116,6 @@ if (state.error) {
  
  
 export default ProductListing;
+
+// ----------------------------------------------------------------
+ 

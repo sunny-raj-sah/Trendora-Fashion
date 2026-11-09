@@ -1,126 +1,5 @@
-// import { useCart } from "../../context/CartContext";
-// import { useWishlist } from "../../context/WishlistContext";
-// import { toast } from "react-toastify";
-
-// const CartItem = ({ product }) => {
-//   const { dispatch: cartDispatch } = useCart();
-
-//   const { state: wishlistState, addWishlist, removeWishlist } = useWishlist();
-
-//   const isWishlist = wishlistState.wishlist.some(
-//     (item) => item._id === product._id,
-//   );
-
-//   // Wishlist Handler
-//   const handleWishlist = async () => {
-//     if (isWishlist) {
-//       await removeWishlist(product._id);
-//       toast.success("Product removed from wishlist");
-//     } else {
-//       await addWishlist(product._id);
-//       toast.success( "Product added to wishlist.");
-//     }
-//   };
-//   return (
-//     <div className="card mb-4 shadow-sm border-0">
-//       <div className="row g-0">
-//         <div className="col-md-4 bg-light">
-//           <img
-//             src={product.image}
-//             alt={product.title}
-//             className="img-fluid p-3"
-//             style={{
-//               height: "250px",
-
-//               objectFit: "contain",
-//             }}
-//           />
-//         </div>
-
-//         <div className="col-md-8">
-//           <div className="card-body">
-//             <h4>{product.title}</h4>
-
-//             <h5 className="fw-bold">₹{product.price}</h5>
-
-//             <p className="text-decoration-line-through text-secondary">
-//               {/* ₹{product.originalPrice} */}
-//             </p>
-
-//             <p className="text-success fw-bold">50% OFF</p>
-
-//             <div className="d-flex align-items-center mb-3">
-//               <span className="me-3">Quantity</span>
-
-//               <button
-//                 className="btn btn-outline-dark btn-sm"
-//                 onClick={() => {
-//                   cartDispatch({
-//                     type: "DECREASE_QUANTITY",
-
-//                     payload: product._id,
-//                   });
-//                   toast.success("decrease quantity successfully");
-//                 }}
-//               >
-//                 -
-//               </button>
-
-//               <span className="mx-3">{product.quantity}</span>
-
-//               <button
-//                 className="btn btn-outline-dark btn-sm"
-//                 onClick={() => {
-//                   cartDispatch({
-//                     type: "INCREASE_QUANTITY",
-
-//                     payload: product._id,
-//                   });
-//                   toast.success("increase quantity successfully");
-//                 }}
-//               >
-//                 +
-//               </button>
-//             </div>
-
-//             <div className="d-flex gap-3">
-//               <button
-//                 className="btn btn-outline-secondary"
-//                 onClick={() => {
-//                   cartDispatch({
-//                     type: "REMOVE_FROM_CART",
-
-//                     payload: product._id,
-//                   });
-//                   toast.success("remove from cart successfully");
-//                 }}
-//               >
-//                 Remove From Cart
-//               </button>
-
-//               <button
-//                 className={`btn ${
-//                   isWishlist ? "btn-danger" : "btn-outline-danger"
-//                 }`}
-//                 onClick={handleWishlist}
-//               >
-//                 {isWishlist ? "Remove Wishlist" : "Add Wishlist"}
-//               </button>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default CartItem;
-// ---------------------------------------------------------------------------
-
-
-
 import { useState } from "react";
-
+import "./CartItem.css"
 import { useCart } from "../../context/CartContext";
 import { useWishlist } from "../../context/WishlistContext";
 import { toast } from "react-toastify";
@@ -310,7 +189,7 @@ const CartItem = ({ product }) => {
             <h4>{productDetails.title}</h4>
 
             <h5 className="fw-bold">
-              ₹{productDetails.price}
+              ₹{productDetails.price.toLocaleString("en-IN")}
             </h5>
 
             <p className="text-decoration-line-through text-secondary">
@@ -362,7 +241,7 @@ const CartItem = ({ product }) => {
             </div>
 
             {/* Actions */}
-            <div className="d-flex gap-3 flex-wrap">
+            {/* <div className="d-flex gap-3 flex-wrap">
 
               <button
                 className="btn btn-outline-secondary"
@@ -400,7 +279,51 @@ const CartItem = ({ product }) => {
                 )}
               </button>
 
-            </div>
+            </div> */}
+            
+{/* Actions */}
+<div className="cart-item-actions d-flex gap-2 flex-wrap">
+
+  <button
+    type="button"
+    className="btn btn-outline-secondary cart-action-btn"
+    disabled={loadingAction !== null}
+    onClick={handleRemove}
+  >
+    {loadingAction === "remove" ? (
+      <>
+        <Spinner />
+        Removing...
+      </>
+    ) : (
+      "Remove From Cart"
+    )}
+  </button>
+
+  <button
+    type="button"
+    className={`btn ${
+      isWishlist
+        ? "btn-danger"
+        : "btn-outline-danger"
+    } cart-action-btn`}
+    disabled={wishlistLoading}
+    onClick={handleWishlist}
+  >
+    {wishlistLoading ? (
+      <>
+        <Spinner />
+        Updating...
+      </>
+    ) : (
+      isWishlist
+        ? "Remove Wishlist"
+        : "Add Wishlist"
+    )}
+  </button>
+
+</div>
+
 
           </div>
 

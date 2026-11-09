@@ -1,0 +1,32 @@
+
+/* Cart Item Action Buttons */
+
+.cart-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cart-action-btn {
+  min-width: 165px;
+  min-height: 42px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 576px) {
+  .cart-item-actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cart-action-btn {
+    width: 100%;
+    min-width: 0;
+  }
+}

@@ -154,7 +154,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 6px;
+    gap: 14px;
     min-width: 0;
   }
 
@@ -162,6 +162,7 @@
   .trendora-brand {
     display: flex;
     align-items: center;
+      margin-right: 6px;
     font-size: 1.2rem;
     flex-shrink: 1;
     min-width: 0;

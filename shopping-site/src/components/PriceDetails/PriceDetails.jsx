@@ -129,7 +129,8 @@ const PriceDetails = () => {
           </span>
 
           <span>
-            ₹{totalPrice}
+            {/* ₹{totalPrice} */}
+            ₹{totalPrice.toLocaleString("en-IN")}
           </span>
 
         </div>
@@ -142,7 +143,8 @@ const PriceDetails = () => {
           </span>
 
           <span>
-            - ₹{discount}
+            {/* - ₹{discount} */}
+            ₹{discount.toLocaleString("en-IN")}
           </span>
 
         </div>
@@ -170,7 +172,8 @@ const PriceDetails = () => {
           </span>
 
           <span>
-            ₹{finalPrice}
+            {/* ₹{finalPrice} */}
+            ₹{finalPrice.toLocaleString("en-IN")}
           </span>
 
         </div>
@@ -180,8 +183,8 @@ const PriceDetails = () => {
         {/* Savings */}
         <p className="text-success fw-bold">
 
-          You will save ₹{discount} on this order.
-
+          {/* You will save ₹{discount} on this order. */}
+          You will save ₹{discount.toLocaleString("en-IN")} on this order.
         </p>
 
         {/* Checkout */}

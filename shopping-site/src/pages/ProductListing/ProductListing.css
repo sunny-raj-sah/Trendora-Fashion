@@ -1,0 +1,24 @@
+.product-listing-content {
+  min-width: 0;
+  overflow-x: hidden;
+}
+
+.product-listing-header {
+  min-width: 0;
+}
+
+.product-listing-header h2 {
+  font-size: 1.75rem;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 576px) {
+  .product-listing-header h2 {
+    font-size: 1.35rem;
+  }
+
+  .product-listing-content {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+}
